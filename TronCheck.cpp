@@ -1,30 +1,49 @@
 #include <iostream>
+#include <Windows.h>
+#include <cstdio>
+#include <string>
 using namespace std;
-    int main()
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+   
+
+    string input;
+    cout << u8"Är du smyg? ja, nej: " << endl;
+    cin >> input;
+    if (input==("ja"))
     {
+        cout << u8"är du glutenfri? ja, nej: " << endl;
+        cin >> input;
+        if (input == ("ja"))
+        {
+            cout << u8"du är extremt tron " << endl;
+        }
 
-        bool isSmyg;
-        bool isGlutenfri;
-
-        cout << "Du smyg? 0 = false, 1 = true: ";
-        cin >> isSmyg;
-        cout << "Du glutenfri? 0 = false, 1 = true: ";
-        cin >> isGlutenfri;
-        cout << endl;;
-
-        if (isSmyg && isGlutenfri) {
-            cout << "Du tron";
+        else if (input == ("nej"))
+        {
+            cout << u8"du är lite tron " << endl;
+            return 0;
         }
-        else if (isSmyg && !isGlutenfri) {
-            cout << "Du typ tron, men inte helt tron";
-        }
-        else if (!isSmyg && isGlutenfri) {
-            cout << "Du typ tron, men inte helt tron";
-        }
-        else if (!isSmyg && !isGlutenfri) {
-            cout << "Du inte tron!!!";
-        }
-        cout << endl;;
-        system("pause");
-        return 0;
     }
+    if (input == ("nej"))
+    {
+        cout << u8"är du glutenfri? ja, nej: " << endl;
+        cin >> input;
+        if (input == ("ja"))
+        {
+            cout << u8"du är lite tron " << endl;
+        }
+
+        else if (input == ("nej"))
+        {
+            cout << u8"du är inte tron " << endl;
+            return 0;
+        }
+
+    }
+    
+    cout << endl;;
+    return 0;
+}
